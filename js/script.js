@@ -1,4 +1,5 @@
-console.log("Interactive Shoply loaded!");
+const apiUrl = 'https://lowly-mercurial-ziconium.glitch.me/users'; 
+const user = document.getElementById('todos');console.log("Interactive Shoply loaded!");
 
 let currentIndex = 0;
 const images = document.querySelectorAll('.hero-img');
