@@ -1,0 +1,449 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    background-color: #3c6085;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo{
+    margin-left: 10px;
+}
+.header .container .navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+.header-icons i {
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+}
+ /* Dropdown styles */
+ .user-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 30px; /* Adjust based on your layout */
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown a:hover {
+    background-color: #90b9e1;
+}
+
+/* Show dropdown when clicked */
+.user-icon.active .dropdown {
+    display: block;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Hero Section */
+.hero {
+    background: #e9f4ff;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    flex-grow: 1;
+}
+
+.search-bar button {
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+/* Slider container */
+.hero-img-slider {
+    position: absolute;
+    top: 150px; /* Adjust the distance from the top */
+    right: 100px; /* Adjust the distance from the right */
+    width: 750px; /* Adjust the width for a smaller slider */
+    height: 300px; /* Adjust the height */
+    overflow: hidden;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+/* Individual images */
+.hero-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Optional: Add some shadow to the image container */
+.hero-img-slider {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Categories Section */
+.categories {
+    padding: 40px 20px;
+    background: #f8f9fa;
+}
+
+.categories h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-item {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+}
+.category-item img {
+    max-width: 100%;
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+/* Deals Section */
+.deals {
+    padding: 40px 20px;
+}
+
+.deals h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.deal-items {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.deal-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.deal-card:hover {
+    transform: translateY(-10px);
+}
+
+.deal-card img {
+    max-width: 100%;
+    width: 150px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.deal-card button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.deal-card button:hover {
+    background: #218838;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #4c6175;
+    color: #fff;
+}
+/* Add this to style.css */
+
+/* Navbar Toggle (for mobile view) */
+.navbar-toggle {
+    display: none;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.navbar.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+/* Hero Image Slider */
+.hero-img {
+    display: none;    
+    transition: opacity 1s ease-in-out;
+    
+}
+.hero-img img {
+    width: 900px;
+    height: 450px;
+    border-radius: 8px;
+}
+
+.hero-img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Daily Deals Hover Effect */
+.deal-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.deal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+/* Filter and Sort Container */
+.filter-sort-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+/* Flex controls for filter and sort */
+.filter-sort-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.filter, .sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.filter select, .sort select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .filter-sort-container {
+        flex-direction: column;
+    }
+    
+    .filter, .sort {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+/* Cart Modal Styles */
+.cart-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  #cart-items {
+    margin-top: 20px;
+  }
+  
+  #cart-items .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  #checkout-btn {
+    margin-top: 20px;
+    background-color: #f39c12;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #checkout-btn:hover {
+    background-color: #e67e22;
+  }
+  

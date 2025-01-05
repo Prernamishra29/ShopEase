@@ -1,0 +1,126 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #3c6085;
+    padding: 15px 0;
+    border-bottom: 1px solid #a25757;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.header .container .logo{
+    margin-left: 10px;
+}
+
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+/* Header Icons */
+.header-icons i {
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+   
+}
+
+/* Dropdown styles */
+.user-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #5d4b4b;
+}
+
+.dropdown a:hover {
+    background-color: #90b9e1;
+}
+
+/* Show dropdown when clicked */
+.user-icon.active .dropdown {
+    display: block;
+}
+
+/* Basic styling for the dashboard */
+.product {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    background-color: #f9f9f9;
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #45a049;
+}

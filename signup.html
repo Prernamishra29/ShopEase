@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - UniHive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <style>
+        /* Add your custom CSS here for modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .modal button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container p {
+            text-align: center;
+        }
+
+        .form-container p a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .form-container p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sign-Up Form Section -->
+    <section class="form-section">
+        <div class="form-container">
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <label for="signup-name">Full Name:</label>
+                <input type="text" id="signup-name" placeholder="Enter your full name" required>
+
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" placeholder="Enter your email" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" placeholder="Enter your password" required>
+
+                <label for="signup-password-confirm">Confirm Password:</label>
+                <input type="password" id="signup-password-confirm" placeholder="Confirm your password" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Sign In</a></p>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h3>Account Created Successfully!</h3>
+            <p>Your account has been created successfully. You will be redirected to the login page.</p>
+            <button id="close-modal">OK</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript for handling the signup form
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Get form input values
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-password-confirm').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            // Simulate saving the account (in a real-world scenario, save to a database)
+            console.log('Account created for:', name, email);
+
+            // Show success modal
+            document.getElementById('success-modal').style.display = 'flex';
+
+            // Handle redirection after user clicks "OK"
+            document.getElementById('close-modal').addEventListener('click', function() {
+                // Redirect to login page after closing the modal
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>

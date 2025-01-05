@@ -1,0 +1,28 @@
+<!-- navbar.html -->
+<header class="header">
+    <div class="container">
+        <div class="logo">ShopEase</div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="cart.html">Go to Cart</a>
+            <a href="#product">Categories</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="header-icons">
+            <div class="user-icon">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+                <div class="dropdown">
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script>
+    // script.js (For dropdown functionality)
+document.querySelector('.user-icon').addEventListener('click', function() {
+    this.classList.toggle('active');
+});
+</script>

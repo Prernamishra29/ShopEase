@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - UniHive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <style>
+        /* Add your custom CSS for form and styling */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container p {
+            text-align: center;
+        }
+
+        .form-container p a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .form-container p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sign-In Form Section -->
+    <section class="form-section">
+        <div class="form-container">
+            <h2>Log In</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+
+                <button type="submit">Log In</button>
+            </form>
+            <p>Don't have an account? <a href="signup.html">Create one</a></p>
+        </div>
+    </section>
+
+    <!-- Popup Section -->
+    <div id="popup" class="popup">
+        <h3>Login Successful! Redirecting...</h3>
+        <button onclick="redirectToMainPage()">Okay</button>
+    </div>
+
+    <script>
+        // JavaScript for handling login form submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Get form input values
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            // For demo purposes, we check if the email and password match hardcoded values.
+            // In a real application, this would be replaced with an actual authentication method (e.g., API call to server).
+            if (email === email && password === password) {
+                // Show the popup on successful login
+                document.getElementById('popup').style.display = 'block';
+            } else {
+                // Show an error message if the credentials are incorrect
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+
+        // Function to redirect to the main page (index.html)
+        function redirectToMainPage() {
+            // Hide the popup
+            document.getElementById('popup').style.display = 'none';
+
+            // Redirect to the main page (index.html)
+            window.location.href = "dashboard.html"; // Replace with your actual main page URL
+        }
+    </script>
+</body>
+</html>
